@@ -1,0 +1,18 @@
+{
+    "name": "dachande/t00niebox-server",
+    "authors": [
+        {
+            "name": "Daniel Schultheis",
+            "email": "d.schultheis@kabel-salat.net"
+        }
+    ],
+    "require": {
+        "nikic/fast-route": "^1.2",
+        "sabre/http": "^4.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    }
+}
