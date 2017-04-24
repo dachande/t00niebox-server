@@ -12,7 +12,7 @@ Unfortunately in my opinion the Toniebox and the Tonies&reg; are way too expensi
 
 This concept is still a WIP so it is very likely to change.
 
-The t00niebox consists of two components. A server (this repository) and a client (https://github.com/t00niebox-client).
+The t00niebox consists of two components. A server (this repository) and a client (https://github.com/dachande/t00niebox-client).
 
 ### Server
 
