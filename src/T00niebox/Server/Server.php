@@ -1,6 +1,8 @@
 <?php
 namespace T00niebox\Server;
 
+use Medoo\Medoo;
+
 /**
  * Server class managing the whole server process
  */
@@ -22,6 +24,11 @@ class Server
     private $response = null;
 
     /**
+     * @var \Medoo\Medoo $db
+     */
+    private $db = null;
+
+    /**
      * Initializing server
      *
      * @param string $handler
@@ -30,11 +37,16 @@ class Server
      */
     public function __construct($handler, array $vars, \Sabre\HTTP\Response $response)
     {
+        // Set handler and handler vars
         $this->handler = $handler;
         $this->vars = $vars;
-        $this->response = $response;
 
+        // Store initial response object and set defaults
+        $this->response = $response;
         $this->response->setHeader('Content-type', 'application/json');
+
+        // Load database
+        $this->db = new Medoo($GLOBALS['config']['app']['db']);
     }
 
     /**

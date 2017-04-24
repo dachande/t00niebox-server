@@ -2,5 +2,8 @@
 
 $baseDir = dirname(__DIR__);
 
+// Composer autoloading
 require $baseDir . '/vendor/autoload.php';
-require 'config/routes.php';
+
+// Application bootstrapping
+require 'config/bootstrap.php';

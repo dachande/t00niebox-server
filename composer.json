@@ -8,7 +8,10 @@
     ],
     "require": {
         "nikic/fast-route": "^1.2",
-        "sabre/http": "^4.2"
+        "sabre/http": "^4.2",
+        "catfan/Medoo": "^1.2",
+        "symfony/config": "^3.2",
+        "symfony/yaml": "^3.2"
     },
     "autoload": {
         "psr-4": {
