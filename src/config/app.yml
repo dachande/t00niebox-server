@@ -1,7 +1,0 @@
-app:
-  db:
-    # This configuration is using sqlite as the default.
-    # If you want to use mysql instead you should have a look at http://medoo.in/api/new
-    # and change the configuration accordingly.
-    database_type: sqlite
-    database_file: /tmp/t00niebox.db
