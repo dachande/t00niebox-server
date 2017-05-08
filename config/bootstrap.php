@@ -212,6 +212,8 @@ Type::build('timestamp')
  * Plugin::load('Migrations'); //Loads a single plugin named Migrations
  *
  */
+Plugin::load('AdminLTE', ['bootstrap' => true, 'routes' => true]);
+
 
 /*
  * Only try to load DebugKit in development mode
@@ -220,3 +222,20 @@ Type::build('timestamp')
 if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
 }
+
+/**
+ * Configure AdminLTE
+ */
+Configure::write('Theme', [
+    'title' => 't00niebox Server',
+    'logo' => [
+        'mini' => '<b>box</b>',
+        'large' => '<b>t00nie</b>box'
+    ],
+    'login' => [
+        'show_remember' => false,
+        'show_register' => false,
+        'show_social' => false,
+    ],
+    'folder' => ROOT,
+]);
