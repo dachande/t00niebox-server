@@ -3,4 +3,5 @@
 /tmp/*
 /logs/*
 *.lock
+composer.phar
 
