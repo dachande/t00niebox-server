@@ -1,6 +1,6 @@
 # T00niebox Client
 
-Client component for my custom reimplementation of the [Toniebox](https://tonies.de/).
+Server component for my custom reimplementation of the [Toniebox](https://tonies.de/).
 
 ## Why?
 
