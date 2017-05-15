@@ -12,7 +12,7 @@ class CardsController extends AppController
 
     public function index()
     {
-        $playlists = $this->Playlists->find('all', [
+        $cards = $this->Cards->find('all', [
             'fields' => [
                 'uuid',
                 'title',
@@ -21,14 +21,14 @@ class CardsController extends AppController
         ]);
 
         $this->set([
-            'playlists' => $playlists,
-            '_serialize' => ['playlists'],
+            'cards' => $cards,
+            '_serialize' => ['cards'],
         ]);
     }
 
     public function view($uuid)
     {
-        $playlist = $this->Playlists->find('all', [
+        $card = $this->Cards->find('all', [
             'conditions' => [
                 'uuid' => $uuid,
             ],
@@ -40,8 +40,8 @@ class CardsController extends AppController
         ])->first();
 
         $this->set([
-            'playlist' => $playlist,
-            '_serialize' => ['playlist'],
+            'card' => $card,
+            '_serialize' => ['card'],
         ]);
     }
 }
