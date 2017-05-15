@@ -1,7 +1,7 @@
 <?php
 use Migrations\AbstractMigration;
 
-class CreatePlaylists extends AbstractMigration
+class CreateCards extends AbstractMigration
 {
     /**
      * Change Method.
@@ -12,7 +12,7 @@ class CreatePlaylists extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('playlists');
+        $table = $this->table('cards');
 
         $table->addColumn(
             'created',

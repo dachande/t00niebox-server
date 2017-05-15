@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
 
-class PlaylistsController extends AppController
+class CardsController extends AppController
 {
     public function initialize()
     {
