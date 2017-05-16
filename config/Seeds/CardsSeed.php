@@ -25,6 +25,7 @@ class CardsSeed extends AbstractSeed
                 'uuid' => '57da3a9f',
                 'title' => 'Lorem ipsum dolor sit amet',
                 'files' => 'a:2:{i:0;s:61:"/home/pilznille/Musik/alpha006-marlin_janus_-_this_is_science";i:1;s:58:"/home/pilznille/Musik/alpha008-marlin_janus_-_tek-no-logic";}',
+                // 'files' => 'a:3:{i:0;s:7:"/foobar";i:1;s:61:"/home/pilznille/Musik/alpha006-marlin_janus_-_this_is_science";i:2;s:58:"/home/pilznille/Musik/alpha008-marlin_janus_-_tek-no-logic";}',
             ],
 
             [

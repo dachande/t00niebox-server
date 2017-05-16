@@ -7,19 +7,19 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Playlists Model
+ * Cards Model
  *
- * @method \App\Model\Entity\Playlist get($primaryKey, $options = [])
- * @method \App\Model\Entity\Playlist newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\Playlist[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\Playlist|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\Playlist patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\Playlist[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\Playlist findOrCreate($search, callable $callback = null, $options = [])
+ * @method \App\Model\Entity\Card get($primaryKey, $options = [])
+ * @method \App\Model\Entity\Card newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\Card[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\Card|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Card patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\Card[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\Card findOrCreate($search, callable $callback = null, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class PlaylistsTable extends Table
+class CardsTable extends Table
 {
 
     /**
@@ -32,7 +32,7 @@ class PlaylistsTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('playlists');
+        $this->setTable('cards');
         $this->setDisplayField('title');
         $this->setPrimaryKey('id');
 

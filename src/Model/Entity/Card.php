@@ -4,7 +4,7 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Playlist Entity
+ * Card Entity
  *
  * @property int $id
  * @property \Cake\I18n\Time $created
@@ -13,7 +13,7 @@ use Cake\ORM\Entity;
  * @property string $title
  * @property string $files
  */
-class Playlist extends Entity
+class Card extends Entity
 {
 
     /**
