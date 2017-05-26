@@ -60,7 +60,11 @@ class AppController extends Controller
      */
     public function beforeRender(Event $event)
     {
-        $this->RequestHandler->renderAs($this, 'json');
+        // Do not render admin-prefixed routes as json. This is neccessarry to get
+        // correctly themed error messages
+        if ($this->request->getParam('prefix') !== 'admin') {
+            $this->RequestHandler->renderAs($this, 'json');
+        }
 
         if (!array_key_exists('_serialize', $this->viewVars) &&
             in_array($this->response->type(), ['application/json', 'application/xml'])
