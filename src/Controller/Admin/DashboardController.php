@@ -3,10 +3,13 @@ namespace App\Controller\Admin;
 
 use Cake\Event\Event;
 
-class CardsController extends AdminController
+use Cake\ORM\TableRegistry;
+
+class DashboardController extends AdminController
 {
     public function index()
     {
+        $this->set('cardCount', TableRegistry::get('Cards')->find('all')->count());
     }
 
     public function beforeFilter(Event $event)

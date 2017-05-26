@@ -14,6 +14,10 @@ class AdminController extends Controller
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
+            'loginAction' => [
+                'controller' => 'Users',
+                'action' => 'login',
+            ],
             'loginRedirect' => [
                 'controller' => 'Users',
                 'action' => 'view',
@@ -23,6 +27,11 @@ class AdminController extends Controller
                 'action' => 'login',
             ],
         ]);
+    }
+
+    public function beforeFilter(Event $event)
+    {
+        $this->Auth->allow(['index']);
     }
 
     public function beforeRender(Event $event)

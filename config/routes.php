@@ -49,13 +49,14 @@ Router::scope('/', function (RouteBuilder $routes) {
      * its action called 'display', and we pass a param to select the view file
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
-    // $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+    // $routes->connect('/', ['controller' => 'Admin', 'action' => 'index', 'prefix' => 'admin']);
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
      */
     // $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
 
+    $routes->redirect('/', ['controller' => 'Dashboard', 'action' => 'index', 'prefix' => 'admin']);
     $routes->resources('Cards', ['only' => ['index', 'view'], 'id' => '.*']);
 
     /**
@@ -78,7 +79,7 @@ Router::scope('/', function (RouteBuilder $routes) {
 });
 
 Router::prefix('admin', function (RouteBuilder $routes) {
-    $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+    $routes->redirect('/', ['controller' => 'Dashboard', 'action' => 'index', 'prefix' => 'admin']);
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
     $routes->fallbacks(DashedRoute::class);
 });
