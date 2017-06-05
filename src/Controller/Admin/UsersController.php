@@ -9,7 +9,7 @@ class UsersController extends AdminController
     {
     }
 
-    public function view()
+    public function view($id)
     {
     }
 
@@ -17,11 +17,15 @@ class UsersController extends AdminController
     {
     }
 
-    public function edit()
+    public function edit($id)
     {
     }
 
-    public function delete()
+    public function delete($id)
+    {
+    }
+
+    public function toggle($id)
     {
     }
 

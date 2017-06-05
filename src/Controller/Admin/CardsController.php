@@ -11,6 +11,26 @@ class CardsController extends AdminController
         $this->set('cards', $cards);
     }
 
+    public function view($id)
+    {
+    }
+
+    public function add()
+    {
+    }
+
+    public function edit($id)
+    {
+    }
+
+    public function delete($id)
+    {
+    }
+
+    public function toggle($id)
+    {
+    }
+
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
