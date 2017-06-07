@@ -4,16 +4,20 @@ namespace App\Controller\Admin;
 use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
 
+/**
+ * @property \App\Model\Table\CardsTable $Cards
+ */
 class CardsController extends AdminController
 {
     public function index()
     {
-        $cards = TableRegistry::get('Cards')->find('all');
-        $this->set('cards', $cards);
+        $this->set('cards', $this->Cards->find('all'));
     }
 
     public function view($id)
     {
+        $card = $this->Cards->get($id);
+        $this->set(compact('card'));
     }
 
     public function add()
