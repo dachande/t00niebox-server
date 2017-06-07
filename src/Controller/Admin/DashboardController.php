@@ -10,6 +10,7 @@ class DashboardController extends AdminController
     public function index()
     {
         $this->set('cardCount', TableRegistry::get('Cards')->find('all')->count());
+        $this->set('userCount', TableRegistry::get('Users')->find('all')->count());
     }
 
     public function beforeFilter(Event $event)
