@@ -2,12 +2,13 @@
 namespace App\Controller\Admin;
 
 use Cake\Event\Event;
+use Cake\ORM\TableRegistry;
 
 class CardsController extends AdminController
 {
     public function index()
     {
-        $cards = \Cake\ORM\TableRegistry::get('Cards')->find('all');
+        $cards = TableRegistry::get('Cards')->find('all');
         $this->set('cards', $cards);
     }
 
