@@ -3,18 +3,39 @@ namespace App\Controller\Admin;
 
 use Cake\Event\Event;
 
+/**
+ * @property \App\Model\Table\UsersTable $Users
+ */
 class UsersController extends AdminController
 {
     public function index()
     {
+        $this->set('users', $this->Users->find('all'));
     }
 
     public function view($id)
     {
+        $user = $this->Users->get($id);
+        $this->set(compact('user'));
     }
 
     public function add()
     {
+        $user = $this->Users->newEntity();
+
+        if ($this->request->is('post')) {
+            $user = $this->Users->patchEntity($user, $this->request->getData());
+
+            if ($this->Users->save($user)) {
+                $this->Flash->success(__('User successfully added.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+
+            $this->Flash->error(__('Unable to add user.'));
+        }
+
+        $this->set('user', $user);
     }
 
     public function edit($id)
@@ -32,7 +53,7 @@ class UsersController extends AdminController
     public function login()
     {
         // Set login-box layout
-        $this->viewBuilder()->setLayout('login');
+        $this->viewBuilder()->setLayout('custom-login');
 
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();

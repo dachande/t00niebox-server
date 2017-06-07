@@ -25,18 +25,24 @@
               <th><?= __('Role'); ?></th>
               <th style="width: 140px;"><?= __('Actions'); ?></th>
             </tr>
-            <?php foreach ($users as $user): ?>
+            <?php if ($users->count() != 0): ?>
+              <?php foreach ($users as $user): ?>
+                <tr>
+                  <td><?= $user->id; ?></td>
+                  <td><?= $user->username; ?></td>
+                  <td><?= $user->role; ?></td>
+                  <td>
+                    <a href="<?= $this->Url->build(['action' => 'view', $user->id]); ?>" class="btn btn-sm btn-primary" title="<?= __('View user profile'); ?>"><i class="fa fa-eye"></i></a>
+                    <a href="<?= $this->Url->build(['action' => 'edit', $user->id]); ?>" class="btn btn-sm btn-info" title="<?= __('Edit user'); ?>"><i class="fa fa-edit"></i></a>
+                    <?= $this->Form->postLink('<i class="fa fa-trash-o"></i>', ['action' => 'delete', $user->id], ['class' => 'btn btn-sm btn-danger', 'title' => __('Delete user'), 'escape' => false, 'confirm' => __('Are you sure you want to delete this user?')]) ?>
+                  </td>
+                </tr>
+              <?php endforeach; ?>
+            <?php else: ?>
               <tr>
-                <td><?= $user->id; ?></td>
-                <td><?= $user->username; ?></td>
-                <td><?= $user->role; ?></td>
-                <td>
-                  <a href="<?= $this->Url->build(['action' => 'view', $user->id]); ?>" class="btn btn-sm btn-primary" title="<?= __('View user profile'); ?>"><i class="fa fa-eye"></i></a>
-                  <a href="<?= $this->Url->build(['action' => 'edit', $user->id]); ?>" class="btn btn-sm btn-info" title="<?= __('Edit user'); ?>"><i class="fa fa-edit"></i></a>
-                  <?= $this->Form->postLink('<i class="fa fa-trash-o"></i>', ['action' => 'delete', $user->id], ['class' => 'btn btn-sm btn-danger', 'title' => __('Delete user'), 'escape' => false, 'confirm' => __('Are you sure you want to delete this user?')]) ?>
-                </td>
+                <td colspan="4"><?= __('No user found'); ?>.</td>
               </tr>
-            <?php endforeach; ?>
+            <?php endif; ?>
           </table>
         </div>
         <!-- /.box-body -->
