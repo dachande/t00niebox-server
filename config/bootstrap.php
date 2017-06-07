@@ -227,7 +227,7 @@ if (Configure::read('debug')) {
  * Configure AdminLTE
  */
 Configure::write('Theme', [
-    'title' => 't00niebox Server',
+    'title' => 't00niebox',
     'logo' => [
         'mini' => '<b>box</b>',
         'large' => '<b>t00nie</b>box'
