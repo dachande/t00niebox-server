@@ -1,0 +1,4 @@
+/* Remove padding from flash messages inside login box */
+.login-box-body .content-header {
+    padding: 0;
+}
