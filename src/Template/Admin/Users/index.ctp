@@ -22,17 +22,18 @@
             <tr>
               <th style="width: 80px;"><?= __('ID'); ?></th>
               <th><?= __('Username'); ?></th>
-              <th><?= __('Title'); ?></th>
-              <th style="width: 100px;"><?= __('Actions'); ?></th>
+              <th><?= __('Role'); ?></th>
+              <th style="width: 140px;"><?= __('Actions'); ?></th>
             </tr>
-            <?php foreach ($cards as $card): ?>
+            <?php foreach ($users as $user): ?>
               <tr>
-                <td><?= $card->id; ?></td>
-                <td><?= $card->uuid; ?></td>
-                <td><?= $card->title; ?></td>
+                <td><?= $user->id; ?></td>
+                <td><?= $user->username; ?></td>
+                <td><?= $user->role; ?></td>
                 <td>
-                  <button type="button" class="btn btn-sm btn-info" title="<?= __('Edit'); ?>"><i class="fa fa-edit"></i></button>
-                  <button type="button" class="btn btn-sm btn-danger" title="<?= __('Delete'); ?>"><i class="fa fa-trash-o"></i></button>
+                  <a href="<?= $this->Url->build(['action' => 'view', $user->id]); ?>" class="btn btn-sm btn-primary" title="<?= __('View user profile'); ?>"><i class="fa fa-eye"></i></a>
+                  <a href="<?= $this->Url->build(['action' => 'edit', $user->id]); ?>" class="btn btn-sm btn-info" title="<?= __('Edit user'); ?>"><i class="fa fa-edit"></i></a>
+                  <?= $this->Form->postLink('<i class="fa fa-trash-o"></i>', ['action' => 'delete', $user->id], ['class' => 'btn btn-sm btn-danger', 'title' => __('Delete user'), 'escape' => false, 'confirm' => __('Are you sure you want to delete this user?')]) ?>
                 </td>
               </tr>
             <?php endforeach; ?>
@@ -42,7 +43,7 @@
 
         <!-- /.box-footer -->
         <div class="box-footer">
-          <button type="button" class="btn btn-default"><i class="fa fa-plus-square-o"></i> <?= __('Add new card'); ?></button>
+          <a href="<?= $this->Url->build(['action' => 'add']); ?>" class="btn btn-success"><i class="fa fa-plus-square-o"></i> <?= __('Add user'); ?></a>
         </div>
         <!-- /.box-footer -->
       </div>
