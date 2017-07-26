@@ -11,6 +11,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\Time $modified
  * @property string $uuid
  * @property string $title
+ * @property string $share
  * @property string $files
  */
 class Card extends Entity
