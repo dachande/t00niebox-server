@@ -16,6 +16,7 @@ class CardsController extends AppController
             'fields' => [
                 'uuid',
                 'title',
+                'share',
                 'files',
             ],
         ]);
@@ -35,6 +36,7 @@ class CardsController extends AppController
             'fields' => [
                 'uuid',
                 'title',
+                'share',
                 'files',
             ],
         ])->first();
