@@ -40,6 +40,6 @@ class CardsController extends AdminController
     {
         parent::beforeFilter($event);
 
-        $this->Auth->allow(['index']);
+        $this->Auth->allow(['index', 'view']);
     }
 }

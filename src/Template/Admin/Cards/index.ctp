@@ -28,7 +28,7 @@
             <?php foreach ($cards as $card): ?>
               <tr>
                 <td><?= $card->id; ?></td>
-                <td><?= $card->uuid; ?></td>
+                <td><a href="<?= $this->Url->build(['action' => 'view', $card['id']]); ?>"><?= $card->uuid; ?></a></td>
                 <td><?= $card->title; ?></td>
                 <td>
                   <a href="<?= $this->Url->build(['action' => 'view', $card->id]); ?>" class="btn btn-sm btn-primary" title="<?= __('View card'); ?>"><i class="fa fa-eye"></i></a>
